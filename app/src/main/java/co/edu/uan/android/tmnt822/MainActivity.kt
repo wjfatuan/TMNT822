@@ -2,6 +2,7 @@ package co.edu.uan.android.tmnt822
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import co.edu.uan.android.tmnt822.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,25 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnRaf.setOnClickListener {
             showTurtle("raf")
+        }
+
+        binding.rbtnLeo.setOnClickListener {
+            showTurtle("leo")
+        }
+        binding.rbtnDonatello.setOnClickListener {
+            showTurtle("donatello")
+        }
+        binding.rbtnMikey.setOnClickListener {
+            showTurtle("mikey")
+        }
+        binding.rbtnRaf.setOnClickListener {
+            showTurtle("raf")
+        }
+
+        binding.turtlesList.setOnItemClickListener { parent, view, position, id ->
+            println("parent: $parent, view: $view, position: $position, id: $id")
+            val tv: TextView = view as TextView
+            showTurtle(tv.text.toString().lowercase())
         }
     }
 
