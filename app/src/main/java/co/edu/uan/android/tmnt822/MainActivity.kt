@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             showTurtle("donatello")
         }
         binding.btnMikey.setOnClickListener {
-            showTurtle("miKey")
+            showTurtle("mikey")
         }
         binding.btnRaf.setOnClickListener {
             showTurtle("raf")
@@ -28,19 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showTurtle(name: String) {
-        when (name) {
-            "leo" -> {
-                binding.imageView.setImageResource(R.drawable.leo)
-            }
-            "donatello" -> {
-                binding.imageView.setImageResource(R.drawable.donatello)
-            }
-            "raf" -> {
-                binding.imageView.setImageResource(R.drawable.raf)
-            }
-            else -> {
-                binding.imageView.setImageResource(R.drawable.mikey)
-            }
-        }
+        val imageId = resources.getIdentifier(name, "drawable", packageName)
+        binding.imageView.setImageResource(imageId)
     }
 }
