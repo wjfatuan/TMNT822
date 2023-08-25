@@ -2,6 +2,7 @@ package co.edu.uan.android.tmnt822
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.TextView
 import co.edu.uan.android.tmnt822.databinding.ActivityMainBinding
 
@@ -39,6 +40,10 @@ class MainActivity : AppCompatActivity() {
         binding.rbtnRaf.setOnClickListener {
             showTurtle("raf")
         }
+
+        val turtles = arrayListOf<String>("Leo", "Mikey")
+        val myAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, turtles)
+        binding.turtlesList.adapter = myAdapter
 
         binding.turtlesList.setOnItemClickListener { parent, view, position, id ->
             println("parent: $parent, view: $view, position: $position, id: $id")
