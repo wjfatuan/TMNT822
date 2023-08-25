@@ -42,13 +42,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         val turtles = arrayListOf<String>("Leo", "Mikey")
-        val myAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, turtles)
+        val myAdapter = TurtlesAdapter(this, turtles)
         binding.turtlesList.adapter = myAdapter
 
         binding.turtlesList.setOnItemClickListener { parent, view, position, id ->
             println("parent: $parent, view: $view, position: $position, id: $id")
-            val tv: TextView = view as TextView
-            showTurtle(tv.text.toString().lowercase())
+            showTurtle(turtles.get(position).lowercase())
         }
     }
 

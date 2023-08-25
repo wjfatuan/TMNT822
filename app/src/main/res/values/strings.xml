@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TMNT822</string>
+    <string name="leo">Leo</string>
+    <string-array name="turtle_names">
+        <item>Leo</item>
+        <item>Raf</item>
+        <item>Donatello</item>
+        <item>Mikey</item>
+    </string-array>
 </resources>
